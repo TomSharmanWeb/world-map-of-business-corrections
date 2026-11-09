@@ -1,0 +1,62 @@
+name: Correction
+description: Suggest a fix to a company or person on World Map of Business
+title: "[Correction] "
+labels: ["correction", "needs review"]
+body:
+  - type: input
+    id: record
+    attributes:
+      label: Record
+      description: The company or person, with its Wikidata ID if you have it (the site's link fills this in).
+      placeholder: "Nike (Q483915)"
+    validations:
+      required: true
+  - type: dropdown
+    id: field
+    attributes:
+      label: Field
+      options:
+        - Name or former name
+        - Founded or dissolved year
+        - Founders
+        - CEO or leadership
+        - Headquarters
+        - Country of origin
+        - Industry
+        - Acquisition or merger
+        - Market presence
+        - Size (revenue, employees, market cap)
+        - Event or story text
+        - Logo or image
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: current
+    attributes:
+      label: What it says now
+    validations:
+      required: true
+  - type: input
+    id: proposed
+    attributes:
+      label: What it should say
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source URL
+      description: A link we can check.
+      placeholder: "https://"
+    validations:
+      required: true
+  - type: textarea
+    id: note
+    attributes:
+      label: Anything else
+  - type: input
+    id: page
+    attributes:
+      label: Page on the site
+      description: Filled in automatically when you come from the site.
